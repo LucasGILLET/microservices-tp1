@@ -4,8 +4,9 @@ WORKDIR /app
 
 # installer pnpm
 RUN npm install -g pnpm
+COPY package.json  ./
+RUN pnpm install
 
 COPY . .
 
-RUN pnpm install
 RUN pnpm build hello-service && pnpm build client

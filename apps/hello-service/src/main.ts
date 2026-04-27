@@ -1,10 +1,10 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app/app.module';
+import { HelloServiceModule } from './hello-service.module';
 import { Transport } from '@nestjs/microservices';
 import { join } from 'path';
 
 async function bootstrap() {
-  const app = await NestFactory.createMicroservice(AppModule, {
+  const app = await NestFactory.createMicroservice(HelloServiceModule, {
     transport: Transport.GRPC,
     options: {
       package: 'hello',
