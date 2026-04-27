@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  hello-service:
+    build: .
+    command: node dist/apps/hello-service/main.js
+    ports:
+      - "5000:5000"
+
+  client:
+    build: .
+    command: node dist/apps/client/main.js
+    ports:
+      - "3000:3000"
+    depends_on:
+      - hello-service

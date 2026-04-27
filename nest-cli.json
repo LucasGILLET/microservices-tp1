@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/td1/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/td1/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/td1",
+  "projects": {
+    "client": {
+      "type": "application",
+      "root": "apps/client",
+      "entryFile": "main",
+      "sourceRoot": "apps/client/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/client/tsconfig.app.json"
+      }
+    },
+    "hello-service": {
+      "type": "application",
+      "root": "apps/hello-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/hello-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/hello-service/tsconfig.app.json"
+      }
+    },
+    "proto": {
+      "type": "library",
+      "root": "libs/proto",
+      "entryFile": "index",
+      "sourceRoot": "libs/proto/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/proto/tsconfig.lib.json"
+      }
+    },
+    "td1": {
+      "type": "application",
+      "root": "apps/td1",
+      "entryFile": "main",
+      "sourceRoot": "apps/td1/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/td1/tsconfig.app.json"
+      }
+    }
+  }
+}
